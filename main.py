@@ -15,8 +15,8 @@ COMMANDS = {
     CMD_RCHAR: "Remove a character from the list of characters that will be converted.",
     CMD_DCHAR: "Display all the characters that will be converted.",
     CMD_HELP: "Display commands.",
-    CMD_CLEAR: "Clears the terminal.",
-    CMD_EXIT: "Exits the program.",
+    CMD_CLEAR: "Clear the terminal.",
+    CMD_EXIT: "Exit the program.",
 }
 
 
@@ -67,7 +67,6 @@ def cmd_rchar(characters):
         characters.pop(char)
     except:
         print(f"Character not found: {char}")
-    
 
 
 def cmd_dchar(characters):
