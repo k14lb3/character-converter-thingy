@@ -1,7 +1,10 @@
+import os
+
 CMD_CONVERT = "convert"
 CMD_CHAR = "char"
 CMD_DCHAR = "dchar"
 CMD_HELP = "help"
+CMD_CLEAR = "clear"
 CMD_EXIT = "exit"
 
 
@@ -10,6 +13,7 @@ COMMANDS = {
     CMD_CHAR: "Add a character that will be converted.",
     CMD_DCHAR: "Display all the characters that will be converted.",
     CMD_HELP: "Display commands.",
+    CMD_CLEAR: "Clears the terminal.",
     CMD_EXIT: "Exits the program.",
 }
 
@@ -49,7 +53,7 @@ def cmd_char(characters):
 def cmd_dchar(characters):
     print("Character\tReplacement")
     for char, char_r in characters.items():
-        print(f'{char}\t\t{char_r}')
+        print(f"{char}\t\t{char_r}")
 
 
 def main():
@@ -69,6 +73,8 @@ def main():
             cmd_dchar(characters)
         elif cmd == CMD_HELP:
             cmd_help()
+        elif cmd == CMD_CLEAR:
+            os.system("cls" if os.name == "nt" else "clear")
         elif cmd == CMD_EXIT:
             return
         else:
