@@ -46,7 +46,7 @@ def cmd_char(characters):
     characters[char] = char_r
 
 
-def cmd_lchar():
+def cmd_dchar():
     pass
 
 
@@ -64,7 +64,7 @@ def main():
         elif cmd == CMD_CHAR:
             cmd_char(characters)
         elif cmd == CMD_DCHAR:
-            cmd_char()
+            cmd_dchar()
         elif cmd == CMD_HELP:
             cmd_help()
         elif cmd == CMD_EXIT:
