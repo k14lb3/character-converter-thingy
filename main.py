@@ -46,8 +46,10 @@ def cmd_char(characters):
     characters[char] = char_r
 
 
-def cmd_dchar():
-    pass
+def cmd_dchar(characters):
+    print("Character\tReplacement")
+    for char, char_r in characters.items():
+        print(f'{char}\t\t{char_r}')
 
 
 def main():
@@ -64,7 +66,7 @@ def main():
         elif cmd == CMD_CHAR:
             cmd_char(characters)
         elif cmd == CMD_DCHAR:
-            cmd_dchar()
+            cmd_dchar(characters)
         elif cmd == CMD_HELP:
             cmd_help()
         elif cmd == CMD_EXIT:
