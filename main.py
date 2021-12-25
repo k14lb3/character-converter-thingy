@@ -26,8 +26,11 @@ def cmd_help():
         print(f"{cmd}\t\t-\t{func}")
 
 
-def cmd_convert():
-    pass
+def cmd_convert(characters):
+    string = input("Input string: ")
+    for char, char_r in characters.items():
+        string = string.replace(char, char_r)
+    print(f"Converted string: {string}")
 
 
 def cmd_char(characters):
@@ -85,7 +88,7 @@ def main():
         cmd = input("\n➡ ")
 
         if cmd == CMD_CONVERT:
-            cmd_convert()
+            cmd_convert(characters)
         elif cmd == CMD_CHAR:
             cmd_char(characters)
         elif cmd == CMD_RCHAR:
