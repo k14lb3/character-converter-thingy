@@ -19,17 +19,41 @@ def cmd_help():
     for cmd, func in COMMANDS.items():
         print(f"{cmd}\t\t-\t{func}")
 
+
 def cmd_convert():
     pass
 
-def cmd_char():
-    pass
+
+def cmd_char(characters):
+    char, char_r = None, None
+
+    while True:
+        char = input("Input character: ")
+
+        if len(char) == 1:
+            break
+
+        print("Invalid input.")
+
+    while True:
+        char_r = input("Input replacement: ")
+
+        if len(char_r) == 1:
+            break
+
+        print("Invalid input.")
+
+    characters[char] = char_r
+
 
 def cmd_lchar():
     pass
 
+
 def main():
     cmd_help()
+
+    characters = {}
 
     while True:
 
@@ -38,7 +62,7 @@ def main():
         if cmd == CMD_CONVERT:
             cmd_convert()
         elif cmd == CMD_CHAR:
-            cmd_char()
+            cmd_char(characters)
         elif cmd == CMD_DCHAR:
             cmd_char()
         elif cmd == CMD_HELP:
