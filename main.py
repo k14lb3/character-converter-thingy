@@ -2,6 +2,7 @@ import os
 
 CMD_CONVERT = "convert"
 CMD_CHAR = "char"
+CMD_RCHAR = "rchar"
 CMD_DCHAR = "dchar"
 CMD_HELP = "help"
 CMD_CLEAR = "clear"
@@ -11,6 +12,7 @@ CMD_EXIT = "exit"
 COMMANDS = {
     CMD_CONVERT: "Convert characters in a given input string.",
     CMD_CHAR: "Add a character that will be converted.",
+    CMD_RCHAR: "Remove a character from the list of characters that will be converted.",
     CMD_DCHAR: "Display all the characters that will be converted.",
     CMD_HELP: "Display commands.",
     CMD_CLEAR: "Clears the terminal.",
@@ -50,6 +52,24 @@ def cmd_char(characters):
     characters[char] = char_r
 
 
+def cmd_rchar(characters):
+    char = None
+
+    while True:
+        char = input("Input character: ")
+
+        if len(char) == 1:
+            break
+
+        print("Invalid input.")
+
+    try:
+        characters.pop(char)
+    except:
+        print(f"Character not found: {char}")
+    
+
+
 def cmd_dchar(characters):
     print("Character\tReplacement")
     for char, char_r in characters.items():
@@ -69,6 +89,8 @@ def main():
             cmd_convert()
         elif cmd == CMD_CHAR:
             cmd_char(characters)
+        elif cmd == CMD_RCHAR:
+            cmd_rchar(characters)
         elif cmd == CMD_DCHAR:
             cmd_dchar(characters)
         elif cmd == CMD_HELP:
